@@ -1,6 +1,16 @@
-<h1>Mr. Cocktail</h1>
-<% @cocktails.each do |cocktail| %>
-  <ul>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  </ul>
-<% end %>
+<%= render 'components/banner' %>
+
+<div class="container p-5">
+  <div class="cards mb-5">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-category" 
+        style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      
+          <%= cocktail.name %>
+      
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
