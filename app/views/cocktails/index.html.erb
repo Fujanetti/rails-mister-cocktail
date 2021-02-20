@@ -6,11 +6,16 @@
       <%= link_to cocktail_path(cocktail) do %>
         <div class="card-category" 
         style="background-image: url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      
           <%= cocktail.name %>
-      
         </div>
       <% end %>
     <% end %>
   </div>
+
+  <%= cl_image_tag("qlwfxs6m2anc2taxg0qn",
+      width: 400, height: 300, crop: :fill) %>
+
+<!-- for face detection -->
+  <%= cl_image_tag("qlwfxs6m2anc2taxg0qn",
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
 </div>
