@@ -1,10 +1,10 @@
 <div class="container">
 
   <h1>New Cocktail</h1>
-  <div class="form-container">
+  <div class="form-group">
     <%= simple_form_for (@cocktail) do |f| %>
-      <%= f.input :name  %>
-      <%= f.submit "Create", class: "btn btn-success"  %>    
+      <%= render partial: "form", locals: {f: f }, class: "form-control" %>
+     
     <% end %>
   </div>
 </div>

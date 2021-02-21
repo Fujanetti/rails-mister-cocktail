@@ -11,9 +11,8 @@ puts "Ingredients reset"
 URL = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list" 
 
 serialized_data = open(URL).read
-drinks = JSON.parse(serialized_data)
+ingredients = JSON.parse(serialized_data)["drinks"]
 
-(0..15).each do |n|
-  Ingredient.create!(name: drinks["drinks"][n]["strIngredient1"])
-  puts n + 1
+ingredients.each do |ingredient|
+  Ingredient.create!(name: ingredient["strIngredient1"])
 end
